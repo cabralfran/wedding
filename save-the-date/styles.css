@@ -4,6 +4,50 @@
    invitación, pero más quieta: acá solo importa la fecha.
    ========================================================== */
 
+@font-face{
+  font-family:"Cormorant Garamond";
+  src:url("fonts/Cormorant_Garamond/static/CormorantGaramond-Light.ttf") format("truetype");
+  font-weight:300;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Cormorant Garamond";
+  src:url("fonts/Cormorant_Garamond/static/CormorantGaramond-LightItalic.ttf") format("truetype");
+  font-weight:300;
+  font-style:italic;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Cormorant Garamond";
+  src:url("fonts/Cormorant_Garamond/static/CormorantGaramond-Regular.ttf") format("truetype");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Cormorant Garamond";
+  src:url("fonts/Cormorant_Garamond/static/CormorantGaramond-Italic.ttf") format("truetype");
+  font-weight:400;
+  font-style:italic;
+  font-display:swap;
+}
+
+@font-face{
+  font-family:"Montserrat";
+  src:url("fonts/Cormorant_Garamond,Montserrat/Montserrat/static/Montserrat-Light.ttf") format("truetype");
+  font-weight:300;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Montserrat";
+  src:url("fonts/Cormorant_Garamond,Montserrat/Montserrat/static/Montserrat-Regular.ttf") format("truetype");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+
 :root{
   --crema:#faf7f2;
   --crema-2:#f2ede4;
@@ -13,8 +57,8 @@
   --terracota:#b4694a;
   --linea:#d9d1c3;
 
-  --serif:"EB Garamond", Georgia, "Times New Roman", serif;
-  --sans:"Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans:"Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
@@ -32,8 +76,8 @@ body{
 
   background:var(--tinta);
   color:var(--tinta);
-  font-family:var(--sans);
-  font-weight:300;
+  font-family:var(--serif);
+  font-weight:400;
   line-height:1.65;
   overflow-x:hidden;
 }
@@ -114,11 +158,12 @@ img{ display:block; max-width:100%; }
   margin:0 0 clamp(1.4rem,4vw,2rem);
   display:flex; align-items:center; justify-content:center; gap:.5rem;
   font-family:var(--serif);
-  font-size:1.1rem;
-  letter-spacing:.3em;
+  font-weight:300;
+  font-size:1.25rem;
+  letter-spacing:.38em;
   color:var(--salvia);
 }
-.monograma em{ font-style:normal; letter-spacing:0; color:var(--terracota); }
+.monograma em{ font-style:italic; font-weight:300; letter-spacing:0; color:var(--terracota); }
 /* Reglas finas a los costados */
 .monograma::before,.monograma::after{
   content:""; width:clamp(28px,10%,54px); height:1px;
@@ -129,40 +174,40 @@ img{ display:block; max-width:100%; }
 
 /* ---------- Encabezado ---------- */
 .eyebrow{
-  margin:0 0 1.1rem;
-  font-size:.68rem;
-  letter-spacing:.46em;
-  text-transform:uppercase;
+  margin:0 0 1.05rem;
+  font-style:italic;
+  font-weight:300;
+  font-size:clamp(1.05rem,3.4vw,1.22rem);
+  letter-spacing:.12em;
   color:var(--terracota);
-  text-indent:.46em;          /* compensa el tracking del último caracter */
 }
 
 .nombres{
   margin:0;
   font-family:var(--serif);
-  font-weight:400;
-  font-size:clamp(2.15rem,9vw,3.35rem);
-  line-height:1.12;
-  letter-spacing:.005em;
+  font-weight:300;
+  font-style:italic;
+  font-size:clamp(2.35rem,9.5vw,3.55rem);
+  line-height:1.08;
+  letter-spacing:.02em;
   text-wrap:balance;
 }
-/* El & va en redonda. La cursiva de las garaldas dibuja el "Et" caligráfico,
-   que a este tamaño se come el renglón. En redonda queda quieto y elegante. */
+/* El & queda en redonda: en cursiva Cormorant dibuja el "Et" y se come el renglón. */
 .nombres em{
   font-style:normal;
-  font-weight:400;
-  font-size:.84em;
+  font-weight:300;
+  font-size:.78em;
   color:var(--terracota);
-  padding:0 .06em;
+  padding:0 .08em;
 }
 
 .intro{
-  margin:.7rem 0 clamp(1.6rem,5vw,2.2rem);
-  font-size:.72rem;
-  letter-spacing:.34em;
+  margin:.85rem 0 clamp(1.6rem,5vw,2.2rem);
+  font-size:.8rem;
+  letter-spacing:.42em;
   text-transform:uppercase;
   color:var(--tinta-suave);
-  text-indent:.34em;
+  text-indent:.42em;
 }
 
 /* ---------- Bloque de fecha ---------- */
@@ -176,27 +221,27 @@ img{ display:block; max-width:100%; }
   border-bottom:1px solid var(--linea);
 }
 .fecha__lado{
-  font-size:clamp(.66rem,2.6vw,.76rem);
-  letter-spacing:.24em;
+  font-size:clamp(.72rem,2.6vw,.84rem);
+  letter-spacing:.28em;
   text-transform:uppercase;
   color:var(--tinta-suave);
 }
 .fecha__centro{ display:block; }
 .fecha__mes,.fecha__anio{
   display:block;
-  font-size:clamp(.62rem,2.4vw,.7rem);
-  letter-spacing:.32em;
+  font-size:clamp(.7rem,2.4vw,.78rem);
+  letter-spacing:.36em;
   text-transform:uppercase;
   color:var(--salvia);
-  text-indent:.32em;
+  text-indent:.36em;
 }
 .fecha__cifra{
   display:block;
   font-family:var(--serif);
-  font-weight:400;
-  font-size:clamp(3.2rem,15vw,4.6rem);
-  line-height:.95;
-  margin:.12em 0;
+  font-weight:300;
+  font-size:clamp(3.4rem,15vw,4.85rem);
+  line-height:.92;
+  margin:.08em 0;
   font-variant-numeric:lining-nums;
 }
 
@@ -204,7 +249,8 @@ img{ display:block; max-width:100%; }
   margin:clamp(1.2rem,4vw,1.6rem) 0 0;
   font-family:var(--serif);
   font-style:italic;
-  font-size:clamp(1.1rem,4vw,1.3rem);
+  font-weight:300;
+  font-size:clamp(1.2rem,4vw,1.42rem);
   color:var(--tinta-suave);
 }
 .lugar span{ color:var(--terracota); font-style:normal; padding:0 .2em; }
@@ -215,11 +261,11 @@ img{ display:block; max-width:100%; }
 
 .cuenta__titulo{
   margin:0 0 .7rem;
-  font-size:.6rem;
-  letter-spacing:.36em;
+  font-size:.68rem;
+  letter-spacing:.4em;
   text-transform:uppercase;
   color:var(--salvia);
-  text-indent:.36em;
+  text-indent:.4em;
 }
 
 .cuenta__lista{
@@ -236,8 +282,8 @@ img{ display:block; max-width:100%; }
 .cuenta__lista strong{
   display:block;
   font-family:var(--serif);
-  font-weight:400;
-  font-size:clamp(1.35rem,5.5vw,1.7rem);
+  font-weight:300;
+  font-size:clamp(1.4rem,5.5vw,1.8rem);
   line-height:1;
   font-variant-numeric:tabular-nums lining-nums;
   color:var(--tinta);
@@ -245,27 +291,44 @@ img{ display:block; max-width:100%; }
 .cuenta__lista span{
   display:block;
   margin-top:.25rem;
-  font-size:.55rem;
-  letter-spacing:.2em;
+  font-size:.62rem;
+  letter-spacing:.22em;
   text-transform:uppercase;
   color:var(--tinta-suave);
-  text-indent:.2em;
+  text-indent:.22em;
 }
 .cuenta__hoy{
   margin:0;
   font-family:var(--serif);
   font-style:italic;
-  font-size:1.4rem;
+  font-weight:300;
+  font-size:1.45rem;
   color:var(--terracota);
 }
 
 /* ---------- Aviso ---------- */
 .aviso{
-  margin:clamp(1.6rem,5vw,2.1rem) 0 clamp(1.5rem,5vw,2rem);
-  font-size:.92rem;
+  margin:clamp(1.6rem,5vw,2.1rem) 0 0;
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:.82rem;
+  letter-spacing:.02em;
   color:var(--tinta-suave);
 }
 .aviso strong{ color:var(--tinta); font-weight:400; }
+
+.nota{
+  margin:1rem 0 clamp(1.5rem,5vw,2rem);
+  padding-top:1rem;
+  border-top:1px solid var(--linea);
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:.95rem;
+  line-height:1.55;
+  color:var(--tinta-suave);
+  text-wrap:pretty;
+}
 
 /* ---------- Acciones ---------- */
 .btn{
@@ -276,7 +339,9 @@ img{ display:block; max-width:100%; }
   background:var(--tinta);
   color:var(--crema);
   text-decoration:none;
-  font-size:.72rem;
+  font-family:var(--sans);
+  font-weight:400;
+  font-size:.68rem;
   letter-spacing:.22em;
   text-transform:uppercase;
   text-indent:.22em;
@@ -289,7 +354,9 @@ img{ display:block; max-width:100%; }
 
 .alt{
   margin:1.1rem 0 0;
-  font-size:.78rem;
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:.72rem;
   color:var(--tinta-suave);
 }
 .alt a{

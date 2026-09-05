@@ -3,8 +3,8 @@
 **Sábado 6 de marzo de 2027 · 18 hs · Posta Natural, Tandil**
 
 Pieza corta, para mandar primero por WhatsApp. Una sola pantalla, sin dependencias
-(el único JS es la cuenta regresiva). Comparte paleta y tipografías con la invitación, así cuando
-llegue la invitación completa se lee como la misma boda.
+(el único JS es la cuenta regresiva). Comparte paleta con la invitación; las tipografías
+viven en `fonts/` (Cormorant Garamond + Montserrat), así no depende de Google Fonts.
 
 ```
 index.html    → toda la pieza
