@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-label="Foto de la pareja (placeholder)">
+  <defs><linearGradient id="g2" x1="1" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#cdd6c6"/><stop offset="100%" stop-color="#7d8c74"/></linearGradient></defs>
+  <rect width="900" height="1200" fill="url(#g2)"/>
+  <g fill="#2e3128" font-family="Helvetica, Arial, sans-serif" text-anchor="middle" fill-opacity=".6">
+    <text x="450" y="590" font-size="46" letter-spacing="8">FOTO 2</text>
+    <text x="450" y="645" font-size="24" letter-spacing="3">placeholder</text>
+  </g>
+</svg>

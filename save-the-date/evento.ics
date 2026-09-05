@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Eugenia y Francisco//Save the Date//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:save-the-date-eugenia-francisco-20270306@eugeyfran
+DTSTAMP:20260825T000000Z
+DTSTART:20270306T210000Z
+DTEND:20270307T060000Z
+SUMMARY:Boda de Eugenia y Francisco
+LOCATION:Posta Natural, Tandil, Buenos Aires, Argentina
+DESCRIPTION:¡Nos casamos! Guardate la fecha. Pronto te llega la invitación con todos los detalles.
+GEO:-37.336091;-59.173875
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:En una semana es la boda de Eugenia y Francisco
+END:VALARM
+END:VEVENT
+END:VCALENDAR

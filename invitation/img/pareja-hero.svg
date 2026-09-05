@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" role="img" aria-label="Foto de la pareja (placeholder)">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c9cbb9"/>
+      <stop offset="55%" stop-color="#9fa88f"/>
+      <stop offset="100%" stop-color="#6e7f63"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1600" fill="url(#g)"/>
+  <g fill="none" stroke="#faf7f2" stroke-opacity=".45" stroke-width="3">
+    <circle cx="600" cy="700" r="230"/>
+    <circle cx="600" cy="700" r="300" stroke-dasharray="14 18"/>
+  </g>
+  <g fill="#faf7f2" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <text x="600" y="690" font-size="120" letter-spacing="14">E &amp; F</text>
+    <text x="600" y="760" font-size="40" font-family="Helvetica, Arial, sans-serif" letter-spacing="10" fill-opacity=".9">FOTO PLACEHOLDER</text>
+    <text x="600" y="820" font-size="28" font-family="Helvetica, Arial, sans-serif" letter-spacing="4" fill-opacity=".7">reemplazar por img/pareja-hero.jpg</text>
+  </g>
+</svg>

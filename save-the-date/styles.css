@@ -1,0 +1,314 @@
+/* ==========================================================
+   Save the date — Eugenia & Francisco
+   Una sola pantalla. Sin JS. Misma familia visual que la
+   invitación, pero más quieta: acá solo importa la fecha.
+   ========================================================== */
+
+:root{
+  --crema:#faf7f2;
+  --crema-2:#f2ede4;
+  --tinta:#2e3128;
+  --tinta-suave:#5b6053;
+  --salvia:#6e7f63;
+  --terracota:#b4694a;
+  --linea:#d9d1c3;
+
+  --serif:"EB Garamond", Georgia, "Times New Roman", serif;
+  --sans:"Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  margin:0;
+  min-height:100svh;
+  display:grid;
+  place-items:center;
+  padding:clamp(1rem,5vw,3rem);
+  padding-top:calc(clamp(1rem,5vw,3rem) + env(safe-area-inset-top));
+  padding-bottom:calc(clamp(1rem,5vw,3rem) + env(safe-area-inset-bottom));
+
+  background:var(--tinta);
+  color:var(--tinta);
+  font-family:var(--sans);
+  font-weight:300;
+  line-height:1.65;
+  overflow-x:hidden;
+}
+
+img{ display:block; max-width:100%; }
+:focus-visible{ outline:2px solid var(--terracota); outline-offset:4px; }
+
+/* ---------- Fondo ---------- */
+.fondo{ position:fixed; inset:0; z-index:0; overflow:hidden; }
+.fondo img{
+  width:100%; height:100%;
+  object-fit:cover; object-position:center 55%;
+  transform:scale(1.08);
+  animation:respirar 30s ease-in-out infinite alternate;
+}
+.fondo::after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(46,49,40,.30) 0%, rgba(46,49,40,.72) 70%, rgba(46,49,40,.88) 100%);
+}
+@keyframes respirar{
+  from{ transform:scale(1.08) translate3d(0,0,0); }
+  to  { transform:scale(1.16) translate3d(0,-1.5%,0); }
+}
+
+/* Grano finito: le saca el brillo digital al fondo */
+.grano{
+  position:fixed; inset:0; z-index:1;
+  pointer-events:none;
+  opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Tarjeta ---------- */
+.tarjeta{
+  position:relative; z-index:2;
+  width:min(100%,545px);
+  background:rgba(250,247,242,.965);
+  padding:clamp(2.4rem,7vw,3.6rem) clamp(1.6rem,6vw,3.2rem);
+  text-align:center;
+  box-shadow:0 30px 70px -25px rgba(20,22,17,.6);
+  animation:entrar 1.1s cubic-bezier(.16,.8,.3,1) both;
+}
+/* Filete interior: el guiño a la papelería impresa */
+.tarjeta::before{
+  content:"";
+  position:absolute; inset:9px;
+  border:1px solid rgba(110,127,99,.32);
+  pointer-events:none;
+}
+
+@keyframes entrar{
+  from{ opacity:0; transform:translateY(26px) scale(.985); }
+  to  { opacity:1; transform:none; }
+}
+
+/* Entrada escalonada de cada bloque */
+.tarjeta > *{ animation:subir .9s cubic-bezier(.16,.8,.3,1) both; }
+.tarjeta > *:nth-child(1){ animation-delay:.30s; }   /* monograma */
+.tarjeta > *:nth-child(2){ animation-delay:.39s; }   /* save the date */
+.tarjeta > *:nth-child(3){ animation-delay:.48s; }   /* nombres */
+.tarjeta > *:nth-child(4){ animation-delay:.57s; }   /* nos casamos */
+.tarjeta > *:nth-child(5){ animation-delay:.66s; }   /* fecha */
+.tarjeta > *:nth-child(6){ animation-delay:.75s; }   /* lugar */
+.tarjeta > *:nth-child(7){ animation-delay:.84s; }   /* cuenta regresiva */
+.tarjeta > *:nth-child(8){ animation-delay:.93s; }   /* aviso */
+.tarjeta > *:nth-child(9){ animation-delay:1.02s; }  /* botón */
+.tarjeta > *:nth-child(10){ animation-delay:1.10s; } /* link alternativo */
+
+@keyframes subir{
+  from{ opacity:0; transform:translateY(12px); }
+  to  { opacity:1; transform:none; }
+}
+
+/* ---------- Monograma ---------- */
+.monograma{
+  margin:0 0 clamp(1.4rem,4vw,2rem);
+  display:flex; align-items:center; justify-content:center; gap:.5rem;
+  font-family:var(--serif);
+  font-size:1.1rem;
+  letter-spacing:.3em;
+  color:var(--salvia);
+}
+.monograma em{ font-style:normal; letter-spacing:0; color:var(--terracota); }
+/* Reglas finas a los costados */
+.monograma::before,.monograma::after{
+  content:""; width:clamp(28px,10%,54px); height:1px;
+  background:var(--linea);
+}
+.monograma::before{ margin-right:.7rem; }
+.monograma::after{ margin-left:.7rem; }
+
+/* ---------- Encabezado ---------- */
+.eyebrow{
+  margin:0 0 1.1rem;
+  font-size:.68rem;
+  letter-spacing:.46em;
+  text-transform:uppercase;
+  color:var(--terracota);
+  text-indent:.46em;          /* compensa el tracking del último caracter */
+}
+
+.nombres{
+  margin:0;
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(2.15rem,9vw,3.35rem);
+  line-height:1.12;
+  letter-spacing:.005em;
+  text-wrap:balance;
+}
+/* El & va en redonda. La cursiva de las garaldas dibuja el "Et" caligráfico,
+   que a este tamaño se come el renglón. En redonda queda quieto y elegante. */
+.nombres em{
+  font-style:normal;
+  font-weight:400;
+  font-size:.84em;
+  color:var(--terracota);
+  padding:0 .06em;
+}
+
+.intro{
+  margin:.7rem 0 clamp(1.6rem,5vw,2.2rem);
+  font-size:.72rem;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--tinta-suave);
+  text-indent:.34em;
+}
+
+/* ---------- Bloque de fecha ---------- */
+.fecha{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  gap:clamp(.9rem,4vw,1.6rem);
+  padding:clamp(1.1rem,4vw,1.5rem) 0;
+  border-top:1px solid var(--linea);
+  border-bottom:1px solid var(--linea);
+}
+.fecha__lado{
+  font-size:clamp(.66rem,2.6vw,.76rem);
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--tinta-suave);
+}
+.fecha__centro{ display:block; }
+.fecha__mes,.fecha__anio{
+  display:block;
+  font-size:clamp(.62rem,2.4vw,.7rem);
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--salvia);
+  text-indent:.32em;
+}
+.fecha__cifra{
+  display:block;
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(3.2rem,15vw,4.6rem);
+  line-height:.95;
+  margin:.12em 0;
+  font-variant-numeric:lining-nums;
+}
+
+.lugar{
+  margin:clamp(1.2rem,4vw,1.6rem) 0 0;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:clamp(1.1rem,4vw,1.3rem);
+  color:var(--tinta-suave);
+}
+.lugar span{ color:var(--terracota); font-style:normal; padding:0 .2em; }
+
+/* ---------- Cuenta regresiva ----------
+   Deliberadamente chica: el número grande de la pieza es el 06, no esto. */
+.cuenta{ margin:clamp(1.3rem,4vw,1.7rem) 0 0; }
+
+.cuenta__titulo{
+  margin:0 0 .7rem;
+  font-size:.6rem;
+  letter-spacing:.36em;
+  text-transform:uppercase;
+  color:var(--salvia);
+  text-indent:.36em;
+}
+
+.cuenta__lista{
+  list-style:none; margin:0; padding:0;
+  display:grid; grid-template-columns:repeat(4,1fr);
+}
+.cuenta__lista li{ position:relative; }
+/* Filetes finos entre columnas */
+.cuenta__lista li + li::before{
+  content:"";
+  position:absolute; left:0; top:15%; bottom:15%;
+  width:1px; background:var(--linea);
+}
+.cuenta__lista strong{
+  display:block;
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(1.35rem,5.5vw,1.7rem);
+  line-height:1;
+  font-variant-numeric:tabular-nums lining-nums;
+  color:var(--tinta);
+}
+.cuenta__lista span{
+  display:block;
+  margin-top:.25rem;
+  font-size:.55rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--tinta-suave);
+  text-indent:.2em;
+}
+.cuenta__hoy{
+  margin:0;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:1.4rem;
+  color:var(--terracota);
+}
+
+/* ---------- Aviso ---------- */
+.aviso{
+  margin:clamp(1.6rem,5vw,2.1rem) 0 clamp(1.5rem,5vw,2rem);
+  font-size:.92rem;
+  color:var(--tinta-suave);
+}
+.aviso strong{ color:var(--tinta); font-weight:400; }
+
+/* ---------- Acciones ---------- */
+.btn{
+  display:inline-block;
+  padding:.9rem 2.1rem;
+  border:1px solid var(--tinta);
+  border-radius:999px;
+  background:var(--tinta);
+  color:var(--crema);
+  text-decoration:none;
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  text-indent:.22em;
+  transition:background .25s ease, color .25s ease, transform .2s ease;
+}
+.btn:hover{
+  background:var(--terracota); border-color:var(--terracota);
+  transform:translateY(-2px);
+}
+
+.alt{
+  margin:1.1rem 0 0;
+  font-size:.78rem;
+  color:var(--tinta-suave);
+}
+.alt a{
+  color:var(--salvia);
+  text-underline-offset:4px;
+  text-decoration-thickness:1px;
+}
+.alt a:hover{ color:var(--terracota); }
+
+/* ---------- Pantallas muy bajas (celular apaisado) ---------- */
+@media (max-height:640px){
+  body{ align-items:start; }
+  .monograma{ margin-bottom:1rem; }
+  .fecha__cifra{ font-size:3rem; }
+  .cuenta{ margin-top:1rem; }
+}
+
+/* ---------- Accesibilidad ---------- */
+@media (prefers-reduced-motion:reduce){
+  .fondo img{ animation:none; transform:scale(1.05); }
+  .tarjeta,.tarjeta > *{ animation:none; }
+}

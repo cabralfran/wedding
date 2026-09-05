@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paleta · Eugenia &amp; Francisco</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --crema:#faf7f2; --crema-2:#f2ede4;
+  --tinta:#2e3128; --tinta-suave:#5b6053;
+  --salvia:#6e7f63; --salvia-claro:#9fa88f;
+  --terracota:#b4694a; --terracota-osc:#9d573b;
+  --arena:#e7c9b8;
+  --linea:#ddd6c9; --linea-std:#d9d1c3;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; padding:clamp(1.5rem,5vw,4rem);
+  background:var(--crema); color:var(--tinta);
+  font-family:"Jost",system-ui,sans-serif; font-weight:300; line-height:1.6;
+}
+.wrap{max-width:1000px;margin:0 auto}
+h1{font-family:"EB Garamond",Georgia,serif;font-weight:400;font-size:clamp(2rem,6vw,3rem);margin:0 0 .2rem}
+h1 span{color:var(--terracota);font-size:.85em;padding:0 .06em}
+.sub{margin:0 0 3rem;color:var(--tinta-suave);font-size:.8rem;letter-spacing:.24em;text-transform:uppercase}
+h2{font-family:"EB Garamond",Georgia,serif;font-weight:400;font-size:1.75rem;margin:3rem 0 .3rem}
+h2:first-of-type{margin-top:0}
+.h2note{margin:0 0 1.4rem;color:var(--tinta-suave);font-size:.9rem;max-width:62ch}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.sw{border:1px solid var(--linea);border-radius:12px;overflow:hidden;background:#fff}
+.sw__color{height:120px;display:flex;align-items:flex-end;padding:.7rem .9rem}
+.sw__hex{font-size:.78rem;letter-spacing:.1em;font-weight:400;
+  background:rgba(255,255,255,.92);color:#2e3128;padding:.2rem .5rem;border-radius:4px}
+.sw__hex.on-light{background:rgba(46,49,40,.86);color:#faf7f2}
+.sw__body{padding:.85rem .9rem 1rem}
+.sw__name{font-weight:500;font-size:.95rem;margin:0 0 .15rem}
+.sw__var{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.72rem;color:var(--salvia);margin:0 0 .5rem}
+.sw__use{margin:0;font-size:.82rem;color:var(--tinta-suave);line-height:1.5}
+
+.pares{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:.5rem}
+.par{border-radius:12px;padding:1.6rem 1.4rem;border:1px solid transparent}
+.par p{margin:0}
+.par .t{font-family:"EB Garamond",Georgia,serif;font-size:1.6rem;line-height:1.15}
+.par .c{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;opacity:.75;margin-top:.6rem}
+.ratio{font-family:ui-monospace,monospace;font-size:.7rem;opacity:.6;margin-top:.35rem}
+
+.cinta{display:flex;height:64px;border-radius:10px;overflow:hidden;margin:.5rem 0 0;border:1px solid var(--linea)}
+.cinta div{flex:1}
+.cinta--prop div:nth-child(1){flex:52}
+.cinta--prop div:nth-child(2){flex:22}
+.cinta--prop div:nth-child(3){flex:14}
+.cinta--prop div:nth-child(4){flex:8}
+.cinta--prop div:nth-child(5){flex:4}
+.leyenda{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:.8rem;font-size:.78rem;color:var(--tinta-suave)}
+.leyenda span{display:flex;align-items:center;gap:.45rem}
+.leyenda i{width:11px;height:11px;border-radius:50%;display:block;border:1px solid rgba(0,0,0,.12)}
+footer{margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--linea);
+  font-size:.8rem;color:var(--tinta-suave)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Paleta <span>&amp;</span> uso</h1>
+<p class="sub">Invitación + Save the date</p>
+
+<h2>Base</h2>
+<p class="h2note">Neutros cálidos. Ninguno es gris ni negro puro: todos tienen una gota de verde, que es lo que los hace convivir con el salvia sin pelearse.</p>
+<div class="grid">
+  <div class="sw">
+    <div class="sw__color" style="background:#faf7f2;border-bottom:1px solid #ddd6c9"><span class="sw__hex on-light">#FAF7F2</span></div>
+    <div class="sw__body"><p class="sw__name">Crema</p><p class="sw__var">--crema</p>
+    <p class="sw__use">Fondo general. La tarjeta del save the date.</p></div>
+  </div>
+  <div class="sw">
+    <div class="sw__color" style="background:#f2ede4"><span class="sw__hex on-light">#F2EDE4</span></div>
+    <div class="sw__body"><p class="sw__name">Crema 2</p><p class="sw__var">--crema-2</p>
+    <p class="sw__use">Secciones alternadas: hospedaje y fotos.</p></div>
+  </div>
+  <div class="sw">
+    <div class="sw__color" style="background:#2e3128"><span class="sw__hex">#2E3128</span></div>
+    <div class="sw__body"><p class="sw__name">Tinta</p><p class="sw__var">--tinta</p>
+    <p class="sw__use">Texto principal. Footer. Botón del save the date.</p></div>
+  </div>
+  <div class="sw">
+    <div class="sw__color" style="background:#5b6053"><span class="sw__hex">#5B6053</span></div>
+    <div class="sw__body"><p class="sw__name">Tinta suave</p><p class="sw__var">--tinta-suave</p>
+    <p class="sw__use">Párrafos secundarios, epígrafes, etiquetas.</p></div>
+  </div>
+</div>
+
+<h2>Acentos</h2>
+<p class="h2note">El salvia estructura; el terracota señala. Esa división es toda la lógica de la paleta.</p>
+<div class="grid">
+  <div class="sw">
+    <div class="sw__color" style="background:#6e7f63"><span class="sw__hex">#6E7F63</span></div>
+    <div class="sw__body"><p class="sw__name">Salvia</p><p class="sw__var">--salvia</p>
+    <p class="sw__use">Banda de "Confirmá si venís". Iconos. Links.</p></div>
+  </div>
+  <div class="sw">
+    <div class="sw__color" style="background:#9fa88f"><span class="sw__hex on-light">#9FA88F</span></div>
+    <div class="sw__body"><p class="sw__name">Salvia claro</p><p class="sw__var">--salvia-claro</p>
+    <p class="sw__use">Borde punteado del alias. Puntos inactivos del carrusel.</p></div>
+  </div>
+  <div class="sw">
+    <div class="sw__color" style="background:#b4694a"><span class="sw__hex">#B4694A</span></div>
+    <div class="sw__body"><p class="sw__name">Terracota</p><p class="sw__var">--terracota</p>
+    <p class="sw__use">El &amp;. Botones primarios. Hashtag. Punto activo. <strong>Escaso a propósito.</strong></p></div>
+  </div>
+  <div class="sw">
+    <div class="sw__color" style="background:#9d573b"><span class="sw__hex">#9D573B</span></div>
+    <div class="sw__body"><p class="sw__name">Terracota oscuro</p><p class="sw__var">—</p>
+    <p class="sw__use">Solo el :hover de los botones terracota.</p></div>
+  </div>
+  <div class="sw">
+    <div class="sw__color" style="background:#e7c9b8"><span class="sw__hex on-light">#E7C9B8</span></div>
+    <div class="sw__body"><p class="sw__name">Arena</p><p class="sw__var">—</p>
+    <p class="sw__use">El &amp; sobre fondos oscuros: hero y footer. El terracota ahí no contrasta.</p></div>
+  </div>
+</div>
+
+<h2>Líneas</h2>
+<p class="h2note">Dos tonos casi iguales, y la diferencia es deliberada: en el save the date las líneas van sobre la tarjeta crema y necesitan un punto más de calidez para no verse grises.</p>
+<div class="grid">
+  <div class="sw">
+    <div class="sw__color" style="background:#ddd6c9"><span class="sw__hex on-light">#DDD6C9</span></div>
+    <div class="sw__body"><p class="sw__name">Línea · invitación</p><p class="sw__var">--linea</p>
+    <p class="sw__use">Bordes de tarjetas, separadores, flechas del carrusel.</p></div>
+  </div>
+  <div class="sw">
+    <div class="sw__color" style="background:#d9d1c3"><span class="sw__hex on-light">#D9D1C3</span></div>
+    <div class="sw__body"><p class="sw__name">Línea · save the date</p><p class="sw__var">--linea</p>
+    <p class="sw__use">Filetes del bloque de fecha y de la cuenta regresiva.</p></div>
+  </div>
+</div>
+
+<h2>Proporción real de uso</h2>
+<p class="h2note">Así se reparte la superficie en las piezas. El terracota es esa astilla del final: si crece, deja de señalar.</p>
+<div class="cinta cinta--prop">
+  <div style="background:#faf7f2"></div>
+  <div style="background:#f2ede4"></div>
+  <div style="background:#2e3128"></div>
+  <div style="background:#6e7f63"></div>
+  <div style="background:#b4694a"></div>
+</div>
+<div class="leyenda">
+  <span><i style="background:#faf7f2"></i>Crema · fondo</span>
+  <span><i style="background:#f2ede4"></i>Crema 2 · secciones</span>
+  <span><i style="background:#2e3128"></i>Tinta · texto y footer</span>
+  <span><i style="background:#6e7f63"></i>Salvia · estructura</span>
+  <span><i style="background:#b4694a"></i>Terracota · señal</span>
+</div>
+
+<h2>Combinaciones que se usan</h2>
+<p class="h2note">Todas pasan AA de contraste para texto normal.</p>
+<div class="pares">
+  <div class="par" style="background:#faf7f2;color:#2e3128;border-color:#ddd6c9">
+    <p class="t">Eugenia &amp; Francisco</p>
+    <p class="c">Tinta sobre crema</p><p class="ratio">11.4 : 1</p>
+  </div>
+  <div class="par" style="background:#faf7f2;color:#5b6053;border-color:#ddd6c9">
+    <p class="t">Posta Natural · Tandil</p>
+    <p class="c">Tinta suave sobre crema</p><p class="ratio">6.2 : 1</p>
+  </div>
+  <div class="par" style="background:#6e7f63;color:#faf7f2">
+    <p class="t">Confirmanos si venís</p>
+    <p class="c">Crema sobre salvia</p><p class="ratio">4.7 : 1</p>
+  </div>
+  <div class="par" style="background:#b4694a;color:#ffffff">
+    <p class="t">Completar formulario</p>
+    <p class="c">Blanco sobre terracota</p><p class="ratio">4.6 : 1</p>
+  </div>
+  <div class="par" style="background:#2e3128;color:#faf7f2">
+    <p class="t">Gracias por acompañarnos</p>
+    <p class="c">Crema sobre tinta · footer</p><p class="ratio">11.4 : 1</p>
+  </div>
+  <div class="par" style="background:#2e3128;color:#e7c9b8">
+    <p class="t">Eugenia &amp; Francisco</p>
+    <p class="c">Arena sobre tinta · el &amp; del hero</p><p class="ratio">7.9 : 1</p>
+  </div>
+</div>
+
+<footer>
+  Esta hoja es solo referencia — no forma parte de las piezas.
+  Vive en <code>docs/paleta.html</code> y podés borrarla cuando quieras.
+  Los valores reales están en el bloque <code>:root</code> de cada <code>styles.css</code>.
+</footer>
+
+</div>
+</body>
+</html>
